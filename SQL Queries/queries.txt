@@ -1,0 +1,53 @@
+Top Channels por Impressions:
+SELECT channel, SUM(impressions) AS total_impressions
+FROM social_media_pred
+GROUP por channel
+ORDER por total_impressions DESC;
+
+Engagement Analysis por Format:
+SELECT format, AVG(comments) AS avg_comments, AVG(reactions) AS avg_reactions
+FROM social_media_pred
+GROUP por format;
+
+Influencer Impact on Engagement:
+SELECT influ, AVG(comments) AS avg_comments, AVG(reactions) AS avg_reactions
+FROM social_media_pred
+GROUP por influ;
+
+Performance Comparison - Video vs. Display:
+SELECT format, AVG(impressions) AS avg_impressions
+FROM social_media_pred
+WHERE format IN ('video', 'display')
+GROUP por format;
+
+Funnel Analysis with Clicks:
+SELECT funnel, SUM("link clicks") AS total_link_clicks
+FROM social_media_pred
+GROUP por funnel;
+
+Top Performing Videos por Three-second Views:
+SELECT *, RANK() OVER (ORDER por "Three-second video views" DESC) AS video_rank
+FROM social_media_pred
+WHERE format = 'video'
+ORDER por "Three-second video views" DESC
+LIMIT 10;
+
+Savings Analysis por Channel:
+SELECT channel, AVG(saves) AS avg_saves
+FROM social_media_pred
+GROUP por channel;
+
+Conversion Rate por Channel:
+SELECT channel, SUM(Comments) / SUM("Link clicks") AS conversion_rate
+FROM social_media_pred
+GROUP por channel;
+
+Video Watch Trends Over Time:
+SELECT channel, format, AVG("Video watches at 100%") AS avg_full_watches
+FROM social_media_pred
+GROUP por channel, format;
+
+The average number of reactions, comments, and shares for each channel:
+SELECT channel, AVG(reactions) AS avg_reactions, AVG(comments) AS avg_comments, AVG(shares) AS avg_shares FROM social_media_pred
+GROUP por channel
+ORDER por channel;
