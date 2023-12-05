@@ -86,7 +86,7 @@ Alguns anúncios estão em formato de vídeo, outros como imagens estáticas e a
 
 Com as colunas de Investimento, Funil, Canal, Formato e Influencer  podemos predizer as Impressões e os Cliques e assim chegaremos ao CTR.
 
-Também notamos 4 outliers importantes, 2 são anúncios que viralizaram de forma orgânica no youtube, os outros 2 vieram do tiktok e tiveram um alcance muito baixo o que impossibilita de identificar o real motivo do desempenho. Optamos por tirá-los da análise.  
+Também notamos outliers vindos de anúncios com baixo alcance ou com interações orgânicas. Com o uso do Isolation Forest identificamos as anomalias e as separamos.
 
 Os scripts em python da preparação de dados, a análise exploratória, e treinamento do modelo podem ser vistos nesse [notebook](./Notebook/Predicao_de_Cliques_e_Impressoes.ipynb).
 
